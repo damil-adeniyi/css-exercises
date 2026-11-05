@@ -8,6 +8,29 @@
   cursor: pointer;
 }
 
+@keyframes bounce {
+  0% {
+    padding-bottom: 0px;
+  }
+  50% {
+    padding-bottom: 20px;
+  }
+  100% {
+    padding-bottom: 0px;
+  }
+}
+
+@keyframes dropdown {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
 .menu-title {
   background-color: rgb(163, 162, 162);
 }
@@ -17,7 +40,8 @@
   padding: 0;
   margin: 0;
   background-color: rgb(99, 97, 97);
-
+  transform-origin: top;
+  transition: all 1s ease-in-out;
   display: none;
 }
 
@@ -26,6 +50,7 @@ ul.dropdown-menu li:hover {
 }
 
 .visible {
+  animation: bounce 1.5s ease-in-out, dropdown 1s ease-in-out;
   display: block;
 }
 
